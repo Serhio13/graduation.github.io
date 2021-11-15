@@ -1,55 +1,42 @@
 // USER VARIABLES SECTION
 
-$accent: orange // Accent Color
-$fontsize: 16px // Body Font Size
-$textcolor: #333 // Text Color
-$lineheight: 1.65 // Document Line Height
-$userfont: roboto-oh5, sans-serif // User Font Family
-$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+$title-font: 'Playfair Display', serif
+$desc-font: 'Lato', sans-serif
+$accent: #00C9E0
+$text-accent: #41EAD4
 
-// Bootstrap compatible gutter variable => $gutter
-$grid-gutter-width: 30px
-$gutter: $grid-gutter-width
 
-// IMPORT SECTION
+$xxl: 1320px
+$xl: 1140px
+$lg: 960px
+$md: 720px
+$sm: 540px
 
-// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
-
-// FONTS LOAD SECTION
-
-@mixin font($fname, $fstyle, $fweight, $furl)
-	@font-face
-		font-family: $fname
-		font-style: $fstyle
-		font-weight: $fweight
-		src: url($furl) format('woff2')
-
-@include font('roboto-oh5', normal, 400, '../fonts/roboto-regular-webfont.woff2')
-@include font('roboto-oh5', italic, 400, '../fonts/roboto-italic-webfont.woff2')
-@include font('roboto-oh5', normal, 700, '../fonts/roboto-bold-webfont.woff2')
-@include font('roboto-oh5', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
-
-// GENERAL DOCUMENT STYLES
-
-::placeholder
-	color: #666
-
-::selection
-	background-color: $accent
-	color: #fff
-
-input, textarea
-	outline: none
-	&:focus:required:invalid
-		border-color: red
-	&:required:valid
-		border-color: green
+@import reset
 
 body
-	font-family: $userfont
-	font-size: $fontsize
-	line-height: $lineheight
-	color: $textcolor
-	min-width: 320px
-	position: relative
-	overflow-x: hidden
+	font-size: 17px
+	
+.wrapper
+	max-width: $xxl
+	margin: 0 auto
+
+@media (max-width: 1400px)
+	.wrapper
+		max-width: $xl
+
+@media (max-width: 1200px)
+	.wrapper
+		max-width: $lg
+
+@media (max-width: 992px)
+	.wrapper
+		max-width: $md
+
+@media (max-width: 768px)
+	.wrapper
+		max-width: $sm
+
+@media (max-width: 576px)
+	.wrapper
+		max-width: 95%
