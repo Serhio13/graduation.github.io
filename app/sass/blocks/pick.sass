@@ -60,6 +60,7 @@
                     font-weight: 300
                     font-size: 18px
                     background-color: #011627
+                    margin-left: -3px
                     &:first-child
                         border-radius: 20% 0 0 0
                     &:last-child
@@ -216,6 +217,58 @@
                 &-btn
                     font-size: 12px
                     width: 180px
+                    letter-spacing: normal
+                &-sm
+                    font-size: 10px
+                    padding-bottom: 2px
+                    i
+                        padding-top: 5px
+                        padding-right: 5px
+
+@media (max-width: 576px)
+    .pick
+        padding: 30px 0
+        &__top
+            justify-content: space-evenly
+            i
+                padding: 5px
+            &-title
+                font-size: 18px
+            &-description
+                font-size: 12px
+                width: 50%
+                br
+                    display: none
+        &__tabs
+            padding: 15px 0
+            &-tab
+                font-size: 12px
+        &__block
+            padding-top: 15px
+            &-left
+                padding-right: 10px
+                width: 45%
+                &-title
+                    font-size: 8px
+                    left: 0
+                    span
+                        line-height: 16px
+                &-arrows
+                    right: 4%
+                    i
+                        font-size: 14px
+                        padding: 10px    
+            &-right
+                width: 55%
+                &-title
+                    font-size: 1em
+                &-subtitle
+                    font-size: 8px
+                &-description
+                    font-size: 8px
+                &-btn
+                    font-size: 8px
+                    width: 100px
                     letter-spacing: normal
                 &-sm
                     font-size: 10px
