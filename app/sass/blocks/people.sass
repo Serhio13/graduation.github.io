@@ -1,0 +1,81 @@
+.people
+    margin-top: 150px
+    padding-top: 50px
+    background-color: #011627
+    &__title
+        text-align: center
+        font-family: $title-font
+        font-size: 4em
+        font-weight: 700
+        letter-spacing: -0.02em
+        padding-bottom: 20px
+    &__subtitle
+        text-align: center
+        font-size: 22px
+        letter-spacing: 0.15em
+        padding-bottom: 50px
+    &__cardlist
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        width: 80%
+        margin: 0 auto
+    &__card
+        max-width: 430px
+        max-height: 405px
+        background-color: #02223B
+        box-shadow: 0px 20px 30px rgba(0, 201, 224, 0.03)
+        margin: 10px
+        border-radius: 5px
+        .card
+            padding: 60px
+            position: relative
+            padding-left: 80px
+            &::before
+                font-family: "Font Awesome 5 Pro"
+                content: url(../images/people/quotes.svg)
+                position: absolute
+                top: 15%
+                left: 8%
+                color: $accent
+            &__title
+                font-weight: 700
+            &__desc
+                font-weight: 100
+                padding: 15px 0
+            &__profile
+                display: flex
+                flex-direction: row
+                align-items: center
+                &-img
+                    padding-right: 15px
+            
+@media (max-width: 1200px)
+    .people
+        &__cardlist
+            width: 100%
+
+@media (max-width: 576px)
+    .people
+        padding-top: 50px
+        margin-top: 30px
+        &__title
+            font-size: 2em
+        &__subtitle
+            font-size: 14px
+            padding-bottom: 20px
+        &__card
+            margin: 5px 0
+        .card
+            padding: 10px
+            padding-left: 40px
+            &::before
+                left: 0
+                top: 5%
+            &__title
+                font-size: 12px
+            &__desc
+                font-size: 12px
+                padding: 5px 0
+            &__profile
+                font-size: 12px

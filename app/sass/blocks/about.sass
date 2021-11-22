@@ -1,8 +1,35 @@
+.background__about
+    background-image: url(../images/about/background2.png)
+    background-position-y: -120%
+    background-repeat: no-repeat
+    position: relative
+    > *
+        position: relative
+        z-index: 2
+    &::after
+        content: ""
+        background: linear-gradient(180deg, rgba(1, 22, 39, 0) 0%, #011627 76.64%, #011627 100%)
+        position: absolute
+        z-index: 1
+        bottom: 10%
+        left: 0
+        width: 100%
+        height: 40%
+    &::before
+        content: ""
+        background: linear-gradient(0deg, rgba(1, 22, 39, 0) 0%, #011627 76.64%, #011627 100%)
+        position: absolute
+        z-index: 1
+        top: 0
+        left: 0
+        width: 100%
+        height: 40%
 .about
     width: 100%
     display: flex
     flex-direction: row
     padding: 30px 80px
+    padding-top: 250px
     &__left
         width: 35%
     &__title
@@ -80,6 +107,7 @@
 
 @media (max-width: 576px)
     .about
+        padding-top: 30px
         &__title
             font-size: 1.5em
         &__info
