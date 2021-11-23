@@ -2,6 +2,22 @@
     margin-top: 150px
     padding-top: 50px
     background-color: #011627
+    &::before
+        content: ""
+        height: 4%
+        width: 2px
+        position: absolute
+        right: 50%
+        top: -2%
+        background-color: $accent
+    &::after
+        content: ""
+        height: 4%
+        width: 2px
+        position: absolute
+        right: 50%
+        bottom: -7%
+        background-color: $accent
     &__title
         text-align: center
         font-family: $title-font
@@ -9,6 +25,8 @@
         font-weight: 700
         letter-spacing: -0.02em
         padding-bottom: 20px
+        &-bottom
+            padding-top: 60px
     &__subtitle
         text-align: center
         font-size: 22px
@@ -32,7 +50,6 @@
             position: relative
             padding-left: 80px
             &::before
-                font-family: "Font Awesome 5 Pro"
                 content: url(../images/people/quotes.svg)
                 position: absolute
                 top: 15%
