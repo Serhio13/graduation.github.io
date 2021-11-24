@@ -57,3 +57,53 @@
         padding-bottom: 50px
     &__logo
         text-align: center
+
+@media (max-width: 1200px)
+    .footer
+        ul
+            &::before
+                top: -32px
+
+@media (max-width: 992px)
+    .footer
+        ul
+            &::before
+                top: -31px
+
+@media (max-width: 768px)
+    .footer
+        p
+            font-size: 15px
+        ul
+            li
+                font-size: 13px
+            &::before
+                top: -32px
+        &__follow
+            &-sm
+                i
+                    padding-right: 5px
+            p
+                &::after
+                    bottom: -12px
+        &__nav
+            padding-bottom: 0
+        &__copyright
+            padding-bottom: 20px
+            
+@media (max-width: 576px)
+    .footer
+        padding-top: 75px
+        &__follow
+            display: none
+        &__block
+            font-size: 13px
+            ul
+                li
+                    font-size: 10px
+                    padding-bottom: 5px
+                &::before
+                    top: -25px
+                    width: 47px
+        &__copyright
+            padding-bottom: 0

@@ -72,15 +72,25 @@
         &__cardlist
             width: 100%
 
+@media (max-width: 768px)
+    .people__subtitle-bottom
+        padding-bottom: 0   
+
 @media (max-width: 576px)
     .people
         padding-top: 50px
         margin-top: 30px
+        &::after
+            bottom: -5%
         &__title
             font-size: 2em
+            &-bottom
+                padding: 0
         &__subtitle
             font-size: 14px
             padding-bottom: 20px
+            &-bottom
+                padding: 0
         &__card
             margin: 5px 0
         .card
