@@ -9,10 +9,25 @@
         font-size: 2em
         span
             color: $accent
+        a
+            text-decoration: none
+            color: #fff
+            transition: all .2s ease-in-out
+            &:hover
+                color: $accent
+                cursor: pointer
+                span
+                    display: none
     &__nav
         display: flex
         align-items: center
         letter-spacing: 0.1em
         text-transform: uppercase
         i
-            padding-right: 30px
+            padding-right: 20px
+            font-weight: 100
+            transition: all .2s ease-in-out
+            &:hover
+                cursor: pointer
+                color: $accent
+                transform: scale(1.1)

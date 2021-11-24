@@ -62,6 +62,7 @@
                 position: absolute
                 bottom: 0
                 right: 16%
+                cursor: pointer
                 i
                     padding: 15px
                     font-weight: 300
@@ -72,6 +73,9 @@
                         border-radius: 20% 0 0 0
                     &:last-child
                         border-radius: 0 0 20% 0
+                    &:hover
+                        color: $accent
+                        transform: scale(1.05)
         &-right
             width: 40%
             display: flex
