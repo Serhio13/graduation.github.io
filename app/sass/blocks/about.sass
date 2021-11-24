@@ -30,6 +30,7 @@
     flex-direction: row
     padding: 30px 80px
     padding-top: 250px
+    position: relative
     &__left
         width: 35%
     &__title
@@ -52,11 +53,51 @@
         padding-left: 50px
         img
             max-width: 280px
+            max-height: 280px
     &__profile
-        &-martin
-            position: relative
-            &-description
-                position: absolute
+        position: relative
+        opacity: 0.5
+        transition: all .5s ease-in-out
+        &-description
+            position: absolute
+            z-index: 10
+            top: 70%
+            left: -30%
+            font-size: 15px
+            letter-spacing: 0.05em
+            font-weight: bold
+            color: #000
+            background-color: #fff
+            padding: 15px
+            box-shadow: 5px 15px 40px rgba(0, 201, 224, 0.2)
+            border-radius: 8px
+            display: none
+            transition: all .5s ease-in-out
+            span
+                color: $accent
+        &-descriptionRight
+            position: absolute
+            z-index: 10
+            top: 70%
+            right: -30%
+            font-size: 15px
+            letter-spacing: 0.05em
+            font-weight: bold
+            color: #000
+            background-color: #fff
+            padding: 15px
+            box-shadow: 5px 15px 40px rgba(0, 201, 224, 0.2)
+            border-radius: 8px
+            display: none
+            transition: all .5s ease-in-out
+            span
+                color: $accent
+        &:hover
+            opacity: 1
+            .about__profile-description
+                display: block
+            .about__profile-descriptionRight
+                display: block
     &__btn
         letter-spacing: 0.15em
         font-size: 14px
