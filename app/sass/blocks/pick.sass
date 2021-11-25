@@ -17,9 +17,33 @@
             color: $accent
     &__tabs
         display: flex
-        justify-content: space-between
+        justify-content: space-around
         padding: 30px 30px
-        border-bottom: 1px solid $text-accent
+        position: relative
+        &::after
+            content: ""
+            height: 1px
+            width: 95%
+            position: absolute
+            left: 2%
+            bottom: 0
+            background-color: $accent
+        &-tab
+            position: relative
+            &::after
+                content: ""
+                height: 3px
+                width: 300px
+                position: absolute
+                left: -80%
+                bottom: -120%
+                background-color: $accent
+                opacity: 0
+                transition: all .2s ease-in-out
+            &:hover
+                cursor: pointer
+                &::after
+                    opacity: 1
     &__block
         display: flex
         width: 100%
@@ -61,7 +85,7 @@
             &-arrows
                 position: absolute
                 bottom: 0
-                right: 16%
+                right: 12%
                 cursor: pointer
                 i
                     padding: 15px
@@ -75,7 +99,7 @@
                         border-radius: 0 0 20% 0
                     &:hover
                         color: $accent
-                        transform: scale(1.05)
+                        transform: scale(1.03)
         &-right
             width: 40%
             display: flex
@@ -113,6 +137,9 @@
                     padding-right: 20px
                     padding-top: 10px
                     color: $accent
+                    transition: all .1s ease-in-out
+                    &:hover
+                        transform: scale(1.1)
 
 @media (max-width: 1400px)
     .pick
@@ -138,6 +165,11 @@
         &__top
             &-title
                 font-size: 3em
+        &__tabs
+            &-tab
+                &::after
+                    width: 200px
+                    left: -42%
         &__block
             &-right
                 width: 50%
@@ -169,6 +201,11 @@
                 font-size: 25px
             &-description
                 font-size: 14px
+        &__tabs
+            &-tab
+                &::after
+                    width: 165px
+                    left: -26%
         &__block
             &-left
             &-right
@@ -206,6 +243,10 @@
             align-items: center
             &-tab
                 font-size: 14px
+                &::after
+                    width: 100px
+                    left: -7%
+                    bottom: -145%
         &__block
             &-left
                 padding-right: 10px
@@ -254,6 +295,10 @@
             padding: 15px 0
             &-tab
                 font-size: 12px
+                &::after
+                    width: 70px
+                    left: 5%
+                    bottom: -90%
         &__block
             padding-top: 15px
             &-left
