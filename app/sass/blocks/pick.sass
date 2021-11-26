@@ -80,8 +80,6 @@
                     width: 100%
                     object-fit: cover
                 display: none
-                &.active
-                    display: block
             &-arrows
                 position: absolute
                 bottom: 0
@@ -140,6 +138,11 @@
                     transition: all .1s ease-in-out
                     &:hover
                         transform: scale(1.1)
+
+.active
+    display: block
+.hide
+    display: none
 
 @media (max-width: 1400px)
     .pick

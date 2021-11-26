@@ -48,14 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		changeSlide()
 	})
 
-	const btnalert = document.querySelector('.banner__slider-btn');
-	console.log('btnalert', btnalert);
-
-	btnalert.onclick = function() {
-		if (!event.isTrusted) return;
-		alert('You have no money');
-	  };
-
-
+	const content = [...document.querySelectorAll('.pick__tabcontent')];
+	const navigation = document.querySelector('.pick__tabs');
+	const tabItems = [...document.querySelectorAll('.pick__tabs-tab')];
 
 })
