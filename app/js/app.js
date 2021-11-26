@@ -48,8 +48,31 @@ document.addEventListener('DOMContentLoaded', () => {
 		changeSlide()
 	})
 
-	const content = [...document.querySelectorAll('.pick__tabcontent')];
+	const content = [...document.querySelectorAll('.pick__block')]; //контент
+	const tabItems = [...document.querySelectorAll('.pick__tabs-tab')]; // навигация табов
 	const navigation = document.querySelector('.pick__tabs');
-	const tabItems = [...document.querySelectorAll('.pick__tabs-tab')];
+
+	function toogleTab(index) {
+		content.forEach((tab) => {
+		tab.classList.add('hide')
+		tab.classList.remove('active-tab')
+		}) //скрываем все элементы
+		content[index].classList.remove('hide') //убираем класс каторый скрывает блок у элемента под номером index
+		content[index].classList.add('active-tab')
+
+		tabItems.forEach((item) => {
+		item.classList.remove('active-tab-item')
+		})
+
+		tabItems[index].classList.add('active-tab-item')
+	}
+	toogleTab(0)
+
+	navigation.addEventListener('click', (e) => {
+		const target = e.target;
+		if (target.classList.contains('pick__tabs-tab')) {
+		toogleTab(Number(e.target.dataset.index))
+		}
+	})
 
 })
