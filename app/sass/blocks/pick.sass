@@ -1,5 +1,8 @@
 .pick
     padding: 90px 80px
+    padding-bottom: 30px
+    position: relative
+    z-index: 100
     &__top
         display: flex
         align-items: center
@@ -16,14 +19,113 @@
             color: $accent
     &__tabs
         display: flex
-        justify-content: space-between
+        justify-content: space-around
         padding: 30px 30px
-        border-bottom: 1px solid $text-accent
+        position: relative
+        &::after
+            content: ""
+            height: 1px
+            width: 95%
+            position: absolute
+            left: 2%
+            bottom: 0
+            background-color: $accent
+        &-tab
+            position: relative
+            &::after
+                content: ""
+                height: 3px
+                width: 300px
+                position: absolute
+                left: -80%
+                bottom: -120%
+                background-color: $accent
+                opacity: 0
+                transition: all .2s ease-in-out
+            &:hover
+                cursor: pointer
+                &::after
+                    opacity: 1
+    &__images
+        display: flex
+        justify-content: space-between
+        .pick__img
+            width: 30%
+            display: inline-block
+            overflow: hidden
+            position: relative
+            cursor: pointer
+            transition: all 0.5s ease-out
+            img
+                border-radius: 5%
+                display: block
+                transition: all 1s ease-out
+            &:hover
+                transform: scale(1.03)
+                span
+                    transform: scale(1.1)
+                    bottom: 20%
+                    left: 10%
+                    background-color: $accent
+                    max-width: 300px
+                    padding: 10px 45px
+                    border-radius: 40px
+                    cursor: pointer
+                img
+                    transform: scale(1.3)
+                    filter: blur(1px)
+            span
+                font-size: 28px
+                font-weight: 700
+                color: white
+                position: absolute
+                bottom: 10%
+                left: 10%
+                z-index: 1
+                transition: all 0.5s ease-out
     &__block
         display: flex
         width: 100%
         padding-top: 50px
         position: relative
+        z-index: 100
+        &-img
+            img
+                border-radius: 2%
+                max-height: 630px
+                width: 100%
+                object-fit: cover
+        .tab__image
+            position: relative
+            width: 100%
+            display: flex
+            justify-content: center
+            &:hover
+                cursor: pointer
+                img
+                    animation: none
+                    transform: scale(0.9)
+                    filter: blur(1px)
+                    opacity: 0.7
+                .tab__image-back
+                    transform: scale(1.1)
+            img
+                border-radius: 2%
+                animation: lastTab 3s linear infinite
+                transition: all 1s ease-out
+                display: block
+            &-back
+                position: absolute
+                top: 40%
+                width: 50%
+                text-align: center
+                transition: all 1s ease-out
+            &-title
+                font-size: 3em
+                font-family: $title-font
+                font-weight: 700
+            &-btn
+                margin: 10px auto
         &-left
             width: 50%
             padding-right: 70px
@@ -51,19 +153,28 @@
             &-img
                 img
                     border-radius: 2%
+                    max-height: 630px
+                    width: 100%
+                    object-fit: cover
+                display: none
             &-arrows
                 position: absolute
                 bottom: 0
-                right: 16%
+                right: 12%
+                cursor: pointer
                 i
                     padding: 15px
                     font-weight: 300
                     font-size: 18px
                     background-color: #011627
+                    margin-left: -3px
                     &:first-child
-                        border-radius: 25% 0 0 0
+                        border-radius: 20% 0 0 0
                     &:last-child
-                        border-radius: 0 0 25% 0
+                        border-radius: 0 0 20% 0
+                    &:hover
+                        color: $accent
+                        transform: scale(1.03)
         &-right
             width: 40%
             display: flex
@@ -76,7 +187,7 @@
                 padding-top: 80px
             &-subtitle
                 font-weight: 700
-                padding: 30px 0
+                padding: 15px 0
             &-description
                 padding-top: 20px
                 padding-bottom: 50px
@@ -101,12 +212,229 @@
                     padding-right: 20px
                     padding-top: 10px
                     color: $accent
-        
+                    transition: all .1s ease-in-out
+                    &:hover
+                        transform: scale(1.1)
+        .promotion__timer
+            .title
+                text-align: center
+                font-size: 24px
+            .timer
+                padding-top: 0
+                &__block
+                    width: 120px
+                    margin: 5px
+                    background-color: $accent
+                    border-radius: 20%
+        &.desert-tab
+            flex-direction: column
+            align-items: center
+            font-family: $title-font
+            font-size: 2em
+    &__glare
+        .glare__1
+            width: 260px
+            height: 300px
+            background-color: #41EAD4
+            opacity: 0.5
+            filter: blur(250px)
+            transform: rotate(-26.06deg)
+            position: absolute
+            top: 25%
+            left: -5%
+            z-index: 1
+            animation: glare 2.2s linear infinite
+        .glare__2
+            width: 600px
+            height: 600px
+            background-color: #BE41EA
+            opacity: 0.11
+            filter: blur(250px)
+            position: absolute
+            top: 45%
+            left: 5%
+            z-index: 5
+            animation: glare 4s linear infinite
+        .glare__3
+            width: 700px
+            height: 700px
+            background-color: #41EAD4
+            opacity: 0.07
+            filter: blur(250px)
+            position: absolute
+            top: 40%
+            left: 15%
+            z-index: 2
+            animation: glare 3s linear infinite
+        .glare__4
+            width: 700px
+            height: 700px
+            background-color: #7741EA
+            opacity: 0.1
+            filter: blur(250px)
+            position: absolute
+            top: 30%
+            right: -2%
+            z-index: 2
+            animation: glare 5s linear infinite
+        .glare__5
+            width: 160px
+            height: 200px
+            background-color: #7741EA
+            opacity: 0.5
+            filter: blur(250px)
+            transform: matrix(-0.9, -0.44, -0.44, 0.9, 0, 0)
+            position: absolute
+            top: 30%
+            left: 0
+            z-index: 1
+            animation: glare 2s linear infinite
+        .glare__6
+            width: 160px
+            height: 200px
+            background-color: #7741EA
+            opacity: 0.5
+            filter: blur(250px)
+            transform: matrix(-0.9, -0.44, -0.44, 0.9, 0, 0)
+            position: absolute
+            top: 25%
+            right: 0
+            z-index: 2
+            animation: glare 2.5s linear infinite
+        .glare__7
+            width: 320px
+            height: 420px
+            background-color: #41EAD4
+            opacity: 0.5
+            filter: blur(250px)
+            transform: matrix(-0.9, -0.44, -0.44, 0.9, 0, 0)
+            position: absolute
+            top: 50%
+            right: 2%
+            z-index: 2
+            animation: glare 2.2s linear infinite
+        .glare__dots
+            position: absolute
+            bottom: -2%
+            left: 30px
+            img
+                width: 200px
+
+.active
+    display: block
+.hide
+    display: none
+.active-tab
+    display: flex
+.active-tab-item
+    display: block
+    font-size: 18px
+
+.timer
+    display: flex
+    justify-content: space-between
+    padding-top: 15px
+    &__block
+        font-size: 25px
+        display: flex
+        flex-direction: column
+        align-items: center
+
+@keyframes lastTab
+    0%
+        opacity: 0.1
+    10%
+        opacity: 0.3
+    20%
+        opacity: 0.5
+    30%
+        opacity: 0.7
+    40%
+        opacity: 0.9
+    50%
+        opacity: 1
+    60%
+        opacity: 0.9
+    70%
+        opacity: 0.7
+    80%
+        opacity: 0.5
+    90%
+        opacity: 0.3
+    100%
+        opacity: 0.1
+
+@keyframes glare
+    0%
+        opacity: 0.1
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.3
+    70%
+        opacity: 0.2
+    100%
+        opacity: 0.1
+
+@media (max-width: 1400px)
+    .pick
+        &__block
+            &-right
+                padding-left: 15px
+                &-title
+                    font-size: 3em
+                    padding-top: 40px
+                &-subtitle
+                    font-size: 16px
+                &-description
+                    font-size: 16px
+                    padding-bottom: 30px
+            &-left
+                &-title
+                    font-size: 22px
+                &-arrows
+                    right: 14%
+        &__images
+            .pick__img
+                span
+                    font-size: 24px
+
 @media (max-width: 1200px)
     .pick
         &__top
             &-title
                 font-size: 3em
+        &__tabs
+            &-tab
+                &::after
+                    width: 200px
+                    left: -42%
+        &__block
+            &-right
+                width: 50%
+                padding-left: 0
+                &-title
+                    padding-top: 10px
+                    font-size: 2.5em
+                &-subtitle
+                    padding: 15px 0
+                &-description
+                    padding-top: 10px
+                    padding-bottom: 20px
+                &-btn
+                    font-size: 16px
+            &-left
+                padding-right: 40px
+                &-title
+                    font-size: 1em
+                    span
+                        line-height: 30px
+                &-arrows
+                    right: 10%
+        &__images
+            .pick__img
+                span
+                    font-size: 18px
 
 @media (max-width: 992px)
     .pick
@@ -116,6 +444,64 @@
                 font-size: 25px
             &-description
                 font-size: 14px
+        &__tabs
+            &-tab
+                &::after
+                    width: 165px
+                    left: -26%
+        &__block
+            &-left
+            &-right
+                &-title
+                    font-size: 2em
+                    padding-top: 0
+                &-subtitle
+                    padding: 5px 0
+                    font-size: 14px
+                &-description
+                    padding-top: 0px
+                    padding-bottom: 10px
+                    font-size: 14px
+                &-btn
+                    width: 250px
+                    font-size: 14px
+                    padding-left: 15px
+                    padding-right: 15px
+                &-sm
+                    font-size: 12px
+                    i
+                        font-size: 14px
+                        padding-right: 15px
+            .promotion__timer
+                .title
+                    font-size: 11px
+                    text-align: center
+            .timer
+                padding-top: 0
+                &__block
+                    font-size: 11px 
+                    width: 50px
+                    margin: 5px
+                    background-color: $accent
+                    border-radius: 20%
+        &__images
+            .pick__img
+                span
+                    font-size: 12px
+        .tab__image
+            &-back
+                top: 30%
+                width: 60%
+        &__glare
+            .glare__3
+                display: none
+            .glare__7
+                right: 15%
+            .glare__dots
+                bottom: 1%
+                left: 5px
+                img
+                    width: 150px
             
 @media (max-width: 768px)
     .pick
@@ -130,3 +516,154 @@
             align-items: center
             &-tab
                 font-size: 14px
+                &::after
+                    width: 100px
+                    left: -7%
+                    bottom: -145%
+        &__block
+            &-left
+                padding-right: 10px
+                width: 45%
+                &-title
+                    font-size: 12px
+                &-arrows
+                    right: 4%
+                    i
+                        font-size: 14px
+                        padding: 10px    
+            &-right
+                width: 55%
+                &-title
+                    font-size: 1.5em
+                &-subtitle
+                    font-size: 12px
+                &-description
+                    font-size: 12px
+                &-btn
+                    font-size: 12px
+                    width: 180px
+                    letter-spacing: normal
+                &-sm
+                    font-size: 10px
+                    padding-bottom: 2px
+                    i
+                        padding-top: 5px
+                        padding-right: 5px
+        &__images
+            .pick__img
+                span
+                    font-size: 10px
+                &:hover
+                    span
+                        left: 8%
+                        padding: 10px 35px
+        .tab__image
+            &-title
+                font-size: 2em
+            &-desc
+                font-size: 14px
+        &__glare
+            .glare__2
+                display: none
+            .glare__dots
+                img
+                    width: 100px
+
+@media (max-width: 576px)
+    .pick
+        padding: 30px 0
+        &__top
+            justify-content: space-evenly
+            i
+                padding: 5px
+            &-title
+                font-size: 18px
+            &-description
+                font-size: 12px
+                width: 50%
+                br
+                    display: none
+        &__tabs
+            padding: 15px 0
+            &-tab
+                font-size: 12px
+                text-align: center
+                &::after
+                    display: none
+        &__block
+            padding-top: 15px
+            flex-direction: column
+            &-left
+                padding-right: 0
+                width: 60%
+                margin: 0 auto
+                &-title
+                    font-size: 8px
+                    left: -15%
+                    span
+                        line-height: 16px
+                &-arrows
+                    right: 0
+                    i
+                        font-size: 14px
+                        padding: 10px   
+            .promotion__timer
+                .title
+                    font-size: 11px
+                    text-align: center
+            .timer
+                padding-top: 0
+                &__block
+                    font-size: 12px 
+                    width: 50px
+                    margin: 5px
+                    background-color: $accent
+                    border-radius: 20%
+            &-right
+                width: 100%
+                &-title
+                    font-size: 1em
+                &-subtitle
+                    font-size: 8px
+                &-description
+                    font-size: 8px
+                &-btn
+                    font-size: 8px
+                &-sm
+                    font-size: 10px
+                    padding-bottom: 2px
+                    i
+                        padding-top: 5px
+                        padding-right: 5px
+        &__images
+            &-title
+                font-size: 20px
+            .pick__img
+                span
+                    font-size: 8px
+                    text-align: center
+                &:hover
+                    span
+                        left: 10%
+                        padding: 5px 15px
+        .tab__image
+            &-back
+                top: 20%
+            &-title
+                font-size: 20px
+            &-desc
+                font-size: 10px
+            &-btn
+                font-size: 10px
+        &__glare
+            .glare__7
+                top: 20%
+                right: 50%
+            .glare__6
+                right: 20%
+            .glare__dots
+                bottom: 27%
+                left: 62%
+                img
+                    width: 70px
+                    transform: scale(-1, 1)

@@ -1,18 +1,62 @@
 .header
     display: flex
     justify-content: space-between
-    align-items: center
+    align-items: flex-start
     padding-top: 40px
+    min-height: 250px
     &__logo
         font-family: $title-font
         font-weight: 700
         font-size: 2em
         span
             color: $accent
+        a
+            text-decoration: none
+            color: #fff
+            transition: all .2s ease-in-out
+            &:hover
+                color: $accent
+                cursor: pointer
+                span
+                    display: none
     &__nav
         display: flex
         align-items: center
         letter-spacing: 0.1em
         text-transform: uppercase
         i
-            padding-right: 30px
+            padding-right: 20px
+            font-weight: 100
+            transition: all .2s ease-in-out
+            &:hover
+                cursor: pointer
+                color: $accent
+                transform: scale(1.1)
+        &-btn
+            margin: 5px
+        a
+            text-decoration: none
+            color: #fff
+
+.menu
+    display: none
+
+.showMenu
+    display: block
+
+.fade
+    animation-name: fade
+    animation-duration: 1s
+
+@keyframes fade
+    0%
+        opacity: 0.1
+    100%
+        opacity: 1
+
+@media (max-width: 576px)
+    .header
+        flex-direction: column
+        justify-content: flex-start
+        align-items: center
+        height: 1vh

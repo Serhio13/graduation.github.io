@@ -1,0 +1,133 @@
+.footer
+    padding-top: 200px
+    a
+        &:hover
+            color: $accent
+    &__nav
+        display: flex
+        justify-content: space-evenly
+        padding-bottom: 50px
+        i
+            color: $accent
+        a
+            text-decoration: none
+            color: #fff
+    &__block
+        ul
+            list-style: none
+            padding-left: 0
+            position: relative
+            &::before
+                content: ""
+                position: absolute
+                width: 50px
+                height: 2px
+                background-color: $accent
+                top: -31px
+            li
+                padding-bottom: 15px
+        i
+            padding-left: 40px
+        p
+            text-transform: uppercase
+            font-weight: 700
+            font-size: 18px
+            padding-bottom: 15px
+    &__follow
+        p
+            text-transform: uppercase
+            font-weight: 700
+            font-size: 18px
+            padding-bottom: 15px
+            position: relative
+            &::after
+                content: ""
+                position: absolute
+                width: 40px
+                height: 2px
+                background-color: $accent
+                bottom: -13px
+                left: 0
+        &-arrow
+            padding-left: 40px
+            padding-bottom: 20px
+        &-sm
+            i
+                padding: 10px
+                font-size: 20px
+                transition: all .1s ease-in-out
+                &:hover
+                    transform: scale(1.1)
+                &:first-child
+                    padding-left: 0
+    &__copyright
+        font-size: 15px
+        text-align: center
+        padding-bottom: 50px
+    &__logo
+        text-align: center
+        &:hover
+            color: $accent
+            cursor: pointer
+            span
+                display: none
+
+@media (max-width: 1200px)
+    .footer
+        ul
+            &::before
+                top: -32px
+
+@media (max-width: 992px)
+    .footer
+        ul
+            &::before
+                top: -32px
+        p
+            &::after
+                bottom: -12px     
+
+@media (max-width: 768px)
+    .footer
+        p
+            font-size: 15px
+        ul
+            li
+                font-size: 13px
+            &::before
+                top: -32px
+        &__follow
+            &-sm
+                i
+                    padding-right: 5px
+            p
+                &::after
+                    bottom: -12px
+        &__nav
+            padding-bottom: 0
+        &__copyright
+            padding-bottom: 20px
+            
+@media (max-width: 576px)
+    .footer
+        padding-top: 75px
+        &__nav
+            justify-content: space-between
+        p
+            text-align: center
+        &__follow
+            display: none
+        &__block
+            font-size: 13px
+            ul
+                li
+                    font-size: 10px
+                    padding-bottom: 5px
+                &::before
+                    top: -15px
+                    width: 30px
+                    left: 15%
+        &__copyright
+            padding-bottom: 0
+        .fa-long-arrow-alt-right
+            display: none

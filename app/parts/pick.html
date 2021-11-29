@@ -1,44 +1,150 @@
 <section>
-  <div class="pick wrapper">
+  <div class="pick wrapper" id="scroll">
     <div class="pick__top">
-      <div class="pick__top-title">Pick your trip</div>
+      <h2 class="pick__top-title">Pick your trip</h2>
       <i class="fas fa-times"></i>
       <div class="pick__top-description">Our team put together some trips to you to discover,<br>
         feel free to discover each of them.</div>
     </div>
     <div class="pick__tabs">
-      <div class="pick__tabs-tab">Chill Adventure</div>
-      <div class="pick__tab-tab">Spooky Times</div>
-      <div class="pick__tab-tab">Desert Madness</div>
-      <div class="pick__tab-tab">Out in the wild</div>
+      <div data-index='0' class="pick__tabs-tab tab-chill">Chill Adventure</div>
+      <div data-index='1' class="pick__tabs-tab tab-spooky">Spooky Times</div>
+      <div data-index='2' class="pick__tabs-tab tab-desert">Desert Madness</div>
+      <div data-index='3' class="pick__tabs-tab tab-out">Out in the wild</div>
     </div>
     <div class="pick__block">
       <div class="pick__block-left">
-        <div class="pick__block-left-title">
-          <span>01.</span><br>
-          GRAND DUNES<br> LANDSCAPE
-        </div>
-        <div class="pick__block-left-img">
-          <img src="../images/pick/joe-mania-tyAAl6r_c2U-unsplash 1.png">
-        </div>
-        <div class="pick__block-left-arrows">
-          <i class="fas fa-arrow-left"></i>
-          <i class="fas fa-arrow-right"></i>
+        <div class="pick__tabcontent">
+          <div class="pick__block-left-title">
+            <span id="number">1</span><span>.</span><br>
+            GRAND DUNES<br> LANDSCAPE
+          </div>
+          <div class="pick__block-left-img">
+            <img src="../images/pick/tab1/joe-mania-tyAAl6r_c2U-unsplash 1.png">
+          </div>
+          <div class="pick__block-left-img">
+            <img src="../images/pick/tab1/rr.jpg">
+          </div>
+          <div class="pick__block-left-img">
+            <img src="../images/pick/tab1/tt.jpg">
+          </div>
+          <div class="pick__block-left-arrows">
+            <i class="fas fa-arrow-left" id="left"></i>
+            <i class="fas fa-arrow-right" id="right"></i>
+          </div>
         </div>
       </div>
       <div class="pick__block-right">
-        <div class="pick__block-right-title">Chill Adventure</div>
-        <div class="pick__block-right-subtitle">Ornare vivamus molestie pellentesque nunc. Sed sapien erat ultrices curabitur. Erat id fringilla arcu condimentum fames.</div>
-        <div class="pick__block-right-description">Aliquet dictum aliquet faucibus cursus turpis. Suspendisse cum rutrum sit ut sociis. Pellentesque neque orci adipiscing pharetra lacus, dignissim pharetra ipsum blandit. Feugiat quis quam consectetur lectus id quis tortor vel, mattis.</div>
+        <h3 class="pick__block-right-title">Chill Adventure</h3>
+        <div class="pick__block-right-subtitle">Ornare vivamus molestie pellentesque nunc. Sed sapien erat ultrices
+          curabitur. Erat id fringilla arcu condimentum fames.</div>
+        <div class="pick__block-right-description">Aliquet dictum aliquet faucibus cursus turpis. Suspendisse cum rutrum
+          sit ut sociis. Pellentesque neque orci adipiscing pharetra lacus, dignissim pharetra ipsum blandit. Feugiat
+          quis quam consectetur lectus id quis tortor vel, mattis.</div>
         <div class="pick__block-right-btn btn">SEE OUR LATEST OFFER</div>
         <div class="pick__block-right-sm">
           <div class="pick__block-right-sm-share">
             SHARE IT:
           </div>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-facebook-f"></i>
-          <i class="fab fa-twitter"></i>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
+      </div>
+    </div>
+
+    <div class="pick__block">
+      <div class="pick__block-left">
+        <div class="pick__block-left-title">
+          DARK ROAD
+        </div>
+        <div class="pick__block-img">
+          <img src="../images/pick/tab2/st4test.jpg">
+        </div>
+      </div>
+      <div class="pick__block-right">
+        <h3 class="pick__block-right-title">Spooky Times</h3>
+        <div class="pick__block-right-subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
+          ipsum ducimus debitis fugit, accusamus corporis cupiditate pariatur doloremque quibusdam perspiciatis vel
+          veniam itaque hic quam.</div>
+        <div class="pick__block-right-description">
+          <div class="promotion__timer">
+            <div class="title">The promotion ends in:</div>
+            <div class="timer">
+              <div class="timer__block">
+                <span id="days"></span>
+                days
+              </div>
+              <div class="timer__block">
+                <span id="hours"></span>
+                hours
+              </div>
+              <div class="timer__block">
+                <span id="minutes"></span>
+                minutes
+              </div>
+              <div class="timer__block">
+                <span id="seconds"></span>
+                seconds
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pick__block-right-btn btn">BOOK NOW</div>
+        <div class="pick__block-right-sm">
+          <div class="pick__block-right-sm-share">
+            SHARE IT:
+          </div>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+    </div>
+    <div class="pick__block desert-tab">
+      <div class="pick__images-title">
+        <h2>Desert Madness</h2>
+      </div>
+      <div class="pick__images">
+        <div class="pick__img">
+          <img src="../images/pick/tab3/desert1.jpg">
+          <a href="#"><span>Basin Desert</span></a>
+        </div>
+        <div class="pick__img">
+          <img src="../images/pick/tab3/desert2.png">
+          <a href="#"><span>Chihu Desert</span></a>
+        </div>
+        <div class="pick__img">
+          <img src="../images/pick/tab3/desert3.jpg">
+          <a href="#"><span>Sono Desert</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="pick__block">
+      <div class="tab__image">
+        <img src="../images/pick/tab4/wild.jpg">
+        <div class="tab__image-back">
+          <div class="tab__image-title">
+            Out in the wild
+          </div>
+          <div class="tab__image-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos hic aliquam
+            quis, provident est cupiditate exercitationem ab ullam ex placeat.
+          </div>
+          <div class="tab__image-btn btn">SEE DETALES</div>
+        </div>
+      </div>
+    </div>
+    <div class="pick__glare">
+      <div class="glare__1"></div>
+      <div class="glare__2"></div>
+      <div class="glare__3"></div>
+      <div class="glare__4"></div>
+      <div class="glare__5"></div>
+      <div class="glare__6"></div>
+      <div class="glare__7"></div>
+      <div class="glare__dots">
+        <img src="../images/pick/Dots.svg">
       </div>
     </div>
   </div>

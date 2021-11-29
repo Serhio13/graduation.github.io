@@ -1,0 +1,268 @@
+.background__about
+    background-image: url(../images/about/background2.png)
+    background-position-y: -50%
+    background-repeat: no-repeat
+    position: relative
+    // clip-path: polygon(60% 8%, 95% 14%, 100% 36%, 100% 64%, 100% 100%, 59% 100%, 0 100%, 0 59%, 15% 31%, 41% 38%)
+    > *
+        position: relative
+        z-index: 2
+    &::after
+        content: ""
+        background: linear-gradient(180deg, rgba(1, 22, 39, 0) 0%, #011627 76.64%, #011627 100%)
+        position: absolute
+        z-index: 1
+        bottom: 20%
+        left: 0
+        width: 100%
+        height: 40%
+    &::before
+        content: ""
+        background: linear-gradient(0deg, rgba(1, 22, 39, 0) 0%, #011627 76.64%, #011627 100%)
+        position: absolute
+        z-index: 1
+        top: 0
+        left: 0
+        width: 100%
+        height: 40%
+.about
+    width: 100%
+    display: flex
+    flex-direction: row
+    padding: 30px 80px
+    padding-top: 250px
+    position: relative
+    &__left
+        width: 35%
+    &__title
+        font-family: $title-font
+        font-weight: 700
+        font-size: 3em
+        padding-top: 30px
+    &__info
+        display: flex
+        flex-direction: column
+        &-line
+            padding: 15px 0
+            i
+                color: red
+    &__right
+        width: 65%
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        padding-left: 50px
+        z-index: 2
+        img
+            max-width: 280px
+            max-height: 280px
+    &__profile
+        position: relative
+        opacity: 0.5
+        transition: all .5s ease-in-out
+        &-description
+            position: absolute
+            z-index: 10
+            top: 70%
+            left: -30%
+            font-size: 15px
+            letter-spacing: 0.05em
+            font-weight: bold
+            color: #000
+            background-color: #fff
+            padding: 15px
+            box-shadow: 5px 15px 40px rgba(0, 201, 224, 0.2)
+            border-radius: 8px
+            display: none
+            transition: all .5s ease-in-out
+            span
+                color: $accent
+        &-descriptionRight
+            position: absolute
+            z-index: 10
+            top: 70%
+            right: -30%
+            font-size: 15px
+            letter-spacing: 0.05em
+            font-weight: bold
+            color: #000
+            background-color: #fff
+            padding: 15px
+            box-shadow: 5px 15px 40px rgba(0, 201, 224, 0.2)
+            border-radius: 8px
+            display: none
+            transition: all .5s ease-in-out
+            span
+                color: $accent
+        &:hover
+            opacity: 1
+            .about__profile-description
+                display: block
+            .about__profile-descriptionRight
+                display: block
+    &__btn
+        letter-spacing: 0.15em
+        font-size: 14px
+        margin-top: 15px
+    &__dots
+        position: absolute
+        bottom: 20%
+        right: 8%
+        z-index: 1
+        img
+            height: 300px
+    &__clip
+        position: absolute
+        background-color: #011627
+        left: 0
+        right: 0
+        top: 15%
+        bottom: 0
+        clip-path: polygon(50% 0%, 100% 0, 100% 28%, 81% 29%, 70% 41%, 47% 47%, 23% 43%, 0 55%, 0 0)
+        z-index: -1
+    &__blick
+        &-1
+            position: absolute
+            right: 0
+            top: 55%
+            width: 500px
+            height: 1000px
+            background-color: #41EAD4
+            opacity: 0.1
+            filter: blur(250px)
+            transform: matrix(-1, 0, 0, 1, 0, 0)
+        &-2
+            position: absolute
+            right: 0
+            top: 50%
+            width: 400px
+            height: 700px
+            background-color: #7741EA
+            opacity: 0.1
+            filter: blur(250px)
+        &-3
+            position: absolute
+            left: 10%
+            top: 95%
+            width: 400px
+            height: 500px
+            background-color: #41ADEA
+            opacity: 0.1
+            filter: blur(250px)
+            transform: matrix(-0.91, 0.42, 0.42, 0.91, 0, 0)
+        &-4
+            position: absolute
+            left: 0
+            top: 55%
+            width: 380px
+            height: 700px
+            background-color: #41ADEA
+            opacity: 0.15
+            filter: blur(250px)
+
+@media (max-width: 1400px)
+    .about
+        &__dots
+            bottom: 20%
+            right: 4%
+
+@media (max-width: 1200px)
+    .about
+        &__title
+            padding-top: 0
+        &__info
+            &-line
+                padding: 10px 0
+        &__right
+            padding-left: 40px
+            align-items: flex-end
+            img
+                width: 240px
+        &__profile
+            &-description
+                top: 55%
+        &__btn
+            padding-right: 15px
+        &__dots
+            bottom: 15%
+            right: 3%
+            img
+                height: 300px
+
+@media (max-width: 992px)
+    .about
+        padding-left: 0px
+        padding-right: 0px
+        flex-direction: column
+        position: relative
+        &__left
+            width: 100%
+            text-align: center
+        &__right
+            width: 100%
+            padding-left: 0
+            flex-wrap: nowrap
+            img
+                width: 200px
+                padding: 10px
+        &__profile
+            &-description
+                position: absolute
+                left: 5%
+                top: 80%
+                font-size: 12px
+                width: 180px
+            &-descriptionRight
+                left: 5%
+                top: 80%
+                font-size: 12px
+                width: 180px
+        &__info
+            &-line
+                padding: 5px 0
+        &__btn
+            margin: 0 auto
+        &__dots
+            display: none
+
+@media (max-width: 768px)
+    .about
+        &__right
+            flex-wrap: wrap
+            justify-content: space-around
+            img
+                width: 250px
+        &__blick
+            &-3
+                display: none
+            &-4
+                display: none
+
+@media (max-width: 576px)
+    .about
+        padding-top: 30px
+        &__title
+            font-size: 1.5em
+        &__info
+            &-line
+                font-size: 12px
+        &__btn
+            font-size: 12px
+        &__right
+            padding-top: 15px
+            img
+                padding: 0
+                width: 150px
+        &__profile
+            &-description
+                left: 0
+                top: 85%
+                font-size: 8px
+                width: 150px
+                padding: 5px 0
+            &-descriptionRight
+                left: 0
+                top: 85%
+                font-size: 8px
+                width: 150px
+                padding: 5px 0
