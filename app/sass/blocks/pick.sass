@@ -1,6 +1,8 @@
 .pick
     padding: 90px 80px
     padding-bottom: 30px
+    position: relative
+    z-index: 100
     &__top
         display: flex
         align-items: center
@@ -86,6 +88,7 @@
         width: 100%
         padding-top: 50px
         position: relative
+        z-index: 100
         &-img
             img
                 border-radius: 2%
@@ -228,6 +231,94 @@
             align-items: center
             font-family: $title-font
             font-size: 2em
+    &__glare
+        .glare__1
+            width: 260px
+            height: 300px
+            background-color: #41EAD4
+            opacity: 0.5
+            filter: blur(250px)
+            transform: rotate(-26.06deg)
+            position: absolute
+            top: 25%
+            left: -5%
+            z-index: 1
+            animation: glare 2.2s linear infinite
+        .glare__2
+            width: 600px
+            height: 600px
+            background-color: #BE41EA
+            opacity: 0.11
+            filter: blur(250px)
+            position: absolute
+            top: 45%
+            left: 5%
+            z-index: 5
+            animation: glare 4s linear infinite
+        .glare__3
+            width: 700px
+            height: 700px
+            background-color: #41EAD4
+            opacity: 0.07
+            filter: blur(250px)
+            position: absolute
+            top: 40%
+            left: 15%
+            z-index: 2
+            animation: glare 3s linear infinite
+        .glare__4
+            width: 700px
+            height: 700px
+            background-color: #7741EA
+            opacity: 0.1
+            filter: blur(250px)
+            position: absolute
+            top: 30%
+            right: -2%
+            z-index: 2
+            animation: glare 5s linear infinite
+        .glare__5
+            width: 160px
+            height: 200px
+            background-color: #7741EA
+            opacity: 0.5
+            filter: blur(250px)
+            transform: matrix(-0.9, -0.44, -0.44, 0.9, 0, 0)
+            position: absolute
+            top: 30%
+            left: 0
+            z-index: 1
+            animation: glare 2s linear infinite
+        .glare__6
+            width: 160px
+            height: 200px
+            background-color: #7741EA
+            opacity: 0.5
+            filter: blur(250px)
+            transform: matrix(-0.9, -0.44, -0.44, 0.9, 0, 0)
+            position: absolute
+            top: 25%
+            right: 0
+            z-index: 2
+            animation: glare 2.5s linear infinite
+        .glare__7
+            width: 320px
+            height: 420px
+            background-color: #41EAD4
+            opacity: 0.5
+            filter: blur(250px)
+            transform: matrix(-0.9, -0.44, -0.44, 0.9, 0, 0)
+            position: absolute
+            top: 50%
+            right: 2%
+            z-index: 2
+            animation: glare 2.2s linear infinite
+        .glare__dots
+            position: absolute
+            bottom: -2%
+            left: 30px
+            img
+                width: 200px
 
 .active
     display: block
@@ -270,6 +361,18 @@
         opacity: 0.5
     90%
         opacity: 0.3
+    100%
+        opacity: 0.1
+
+@keyframes glare
+    0%
+        opacity: 0.1
+    25%
+        opacity: 0.2
+    50%
+        opacity: 0.3
+    70%
+        opacity: 0.2
     100%
         opacity: 0.1
 
@@ -389,6 +492,16 @@
             &-back
                 top: 30%
                 width: 60%
+        &__glare
+            .glare__3
+                display: none
+            .glare__7
+                right: 15%
+            .glare__dots
+                bottom: 1%
+                left: 5px
+                img
+                    width: 150px
             
 @media (max-width: 768px)
     .pick
@@ -449,6 +562,12 @@
                 font-size: 2em
             &-desc
                 font-size: 14px
+        &__glare
+            .glare__2
+                display: none
+            .glare__dots
+                img
+                    width: 100px
 
 @media (max-width: 576px)
     .pick
@@ -536,3 +655,15 @@
                 font-size: 10px
             &-btn
                 font-size: 10px
+        &__glare
+            .glare__7
+                top: 20%
+                right: 50%
+            .glare__6
+                right: 20%
+            .glare__dots
+                bottom: 27%
+                left: 62%
+                img
+                    width: 70px
+                    transform: scale(-1, 1)

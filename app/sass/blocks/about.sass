@@ -3,6 +3,7 @@
     background-position-y: -50%
     background-repeat: no-repeat
     position: relative
+    // clip-path: polygon(60% 8%, 95% 14%, 100% 36%, 100% 64%, 100% 100%, 59% 100%, 0 100%, 0 59%, 15% 31%, 41% 38%)
     > *
         position: relative
         z-index: 2
@@ -51,6 +52,7 @@
         flex-wrap: wrap
         justify-content: center
         padding-left: 50px
+        z-index: 2
         img
             max-width: 280px
             max-height: 280px
@@ -102,6 +104,67 @@
         letter-spacing: 0.15em
         font-size: 14px
         margin-top: 15px
+    &__dots
+        position: absolute
+        bottom: 20%
+        right: 8%
+        z-index: 1
+        img
+            height: 300px
+    &__clip
+        position: absolute
+        background-color: #011627
+        left: 0
+        right: 0
+        top: 15%
+        bottom: 0
+        clip-path: polygon(50% 0%, 100% 0, 100% 28%, 81% 29%, 70% 41%, 47% 47%, 23% 43%, 0 55%, 0 0)
+        z-index: -1
+    &__blick
+        &-1
+            position: absolute
+            right: 0
+            top: 55%
+            width: 500px
+            height: 1000px
+            background-color: #41EAD4
+            opacity: 0.1
+            filter: blur(250px)
+            transform: matrix(-1, 0, 0, 1, 0, 0)
+        &-2
+            position: absolute
+            right: 0
+            top: 50%
+            width: 400px
+            height: 700px
+            background-color: #7741EA
+            opacity: 0.1
+            filter: blur(250px)
+        &-3
+            position: absolute
+            left: 10%
+            top: 95%
+            width: 400px
+            height: 500px
+            background-color: #41ADEA
+            opacity: 0.1
+            filter: blur(250px)
+            transform: matrix(-0.91, 0.42, 0.42, 0.91, 0, 0)
+        &-4
+            position: absolute
+            left: 0
+            top: 55%
+            width: 380px
+            height: 700px
+            background-color: #41ADEA
+            opacity: 0.15
+            filter: blur(250px)
+
+@media (max-width: 1400px)
+    .about
+        &__dots
+            bottom: 20%
+            right: 4%
 
 @media (max-width: 1200px)
     .about
@@ -120,6 +183,11 @@
                 top: 55%
         &__btn
             padding-right: 15px
+        &__dots
+            bottom: 15%
+            right: 3%
+            img
+                height: 300px
 
 @media (max-width: 992px)
     .about
@@ -154,6 +222,8 @@
                 padding: 5px 0
         &__btn
             margin: 0 auto
+        &__dots
+            display: none
 
 @media (max-width: 768px)
     .about
@@ -162,6 +232,11 @@
             justify-content: space-around
             img
                 width: 250px
+        &__blick
+            &-3
+                display: none
+            &-4
+                display: none
 
 @media (max-width: 576px)
     .about
