@@ -80,12 +80,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	})
 
+	// Hamburger menu
+
 	document.getElementById("trigger").onclick = function () {
 		open()
 	};
 
 	function open() {
 		document.getElementById("menu").classList.toggle("showMenu");
+		document.querySelector('.fas').classList.toggle("menu");
 	}
 
 	//Timer

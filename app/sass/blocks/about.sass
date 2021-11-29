@@ -111,9 +111,13 @@
             &-line
                 padding: 10px 0
         &__right
-            padding-left: 30px
+            padding-left: 40px
+            align-items: flex-end
             img
                 width: 240px
+        &__profile
+            &-description
+                top: 55%
         &__btn
             padding-right: 15px
 
@@ -122,6 +126,7 @@
         padding-left: 0px
         padding-right: 0px
         flex-direction: column
+        position: relative
         &__left
             width: 100%
             text-align: center
@@ -132,6 +137,18 @@
             img
                 width: 200px
                 padding: 10px
+        &__profile
+            &-description
+                position: absolute
+                left: 5%
+                top: 80%
+                font-size: 12px
+                width: 180px
+            &-descriptionRight
+                left: 5%
+                top: 80%
+                font-size: 12px
+                width: 180px
         &__info
             &-line
                 padding: 5px 0
@@ -157,5 +174,20 @@
         &__btn
             font-size: 12px
         &__right
+            padding-top: 15px
             img
                 padding: 0
+                width: 150px
+        &__profile
+            &-description
+                left: 0
+                top: 85%
+                font-size: 8px
+                width: 150px
+                padding: 5px 0
+            &-descriptionRight
+                left: 0
+                top: 85%
+                font-size: 8px
+                width: 150px
+                padding: 5px 0

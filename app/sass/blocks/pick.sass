@@ -103,6 +103,7 @@
                     animation: none
                     transform: scale(0.9)
                     filter: blur(1px)
+                    opacity: 0.7
                 .tab__image-back
                     transform: scale(1.1)
             img
@@ -183,7 +184,7 @@
                 padding-top: 80px
             &-subtitle
                 font-weight: 700
-                padding: 30px 0
+                padding: 15px 0
             &-description
                 padding-top: 20px
                 padding-bottom: 50px
@@ -211,6 +212,22 @@
                     transition: all .1s ease-in-out
                     &:hover
                         transform: scale(1.1)
+        .promotion__timer
+            .title
+                text-align: center
+                font-size: 24px
+            .timer
+                padding-top: 0
+                &__block
+                    width: 120px
+                    margin: 5px
+                    background-color: $accent
+                    border-radius: 20%
+        &.desert-tab
+            flex-direction: column
+            align-items: center
+            font-family: $title-font
+            font-size: 2em
 
 .active
     display: block
@@ -274,6 +291,10 @@
                     font-size: 22px
                 &-arrows
                     right: 14%
+        &__images
+            .pick__img
+                span
+                    font-size: 24px
 
 @media (max-width: 1200px)
     .pick
@@ -307,6 +328,10 @@
                         line-height: 30px
                 &-arrows
                     right: 10%
+        &__images
+            .pick__img
+                span
+                    font-size: 18px
 
 @media (max-width: 992px)
     .pick
@@ -344,6 +369,26 @@
                     i
                         font-size: 14px
                         padding-right: 15px
+            .promotion__timer
+                .title
+                    font-size: 11px
+                    text-align: center
+            .timer
+                padding-top: 0
+                &__block
+                    font-size: 11px 
+                    width: 50px
+                    margin: 5px
+                    background-color: $accent
+                    border-radius: 20%
+        &__images
+            .pick__img
+                span
+                    font-size: 12px
+        .tab__image
+            &-back
+                top: 30%
+                width: 60%
             
 @media (max-width: 768px)
     .pick
@@ -391,6 +436,19 @@
                     i
                         padding-top: 5px
                         padding-right: 5px
+        &__images
+            .pick__img
+                span
+                    font-size: 10px
+                &:hover
+                    span
+                        left: 8%
+                        padding: 10px 35px
+        .tab__image
+            &-title
+                font-size: 2em
+            &-desc
+                font-size: 14px
 
 @media (max-width: 576px)
     .pick
@@ -410,27 +468,40 @@
             padding: 15px 0
             &-tab
                 font-size: 12px
+                text-align: center
                 &::after
-                    width: 70px
-                    left: 5%
-                    bottom: -90%
+                    display: none
         &__block
             padding-top: 15px
+            flex-direction: column
             &-left
-                padding-right: 10px
-                width: 45%
+                padding-right: 0
+                width: 60%
+                margin: 0 auto
                 &-title
                     font-size: 8px
-                    left: 0
+                    left: -15%
                     span
                         line-height: 16px
                 &-arrows
-                    right: 4%
+                    right: 0
                     i
                         font-size: 14px
-                        padding: 10px    
+                        padding: 10px   
+            .promotion__timer
+                .title
+                    font-size: 11px
+                    text-align: center
+            .timer
+                padding-top: 0
+                &__block
+                    font-size: 12px 
+                    width: 50px
+                    margin: 5px
+                    background-color: $accent
+                    border-radius: 20%
             &-right
-                width: 55%
+                width: 100%
                 &-title
                     font-size: 1em
                 &-subtitle
@@ -439,11 +510,29 @@
                     font-size: 8px
                 &-btn
                     font-size: 8px
-                    width: 100px
-                    letter-spacing: normal
                 &-sm
                     font-size: 10px
                     padding-bottom: 2px
                     i
                         padding-top: 5px
                         padding-right: 5px
+        &__images
+            &-title
+                font-size: 20px
+            .pick__img
+                span
+                    font-size: 8px
+                    text-align: center
+                &:hover
+                    span
+                        left: 10%
+                        padding: 5px 15px
+        .tab__image
+            &-back
+                top: 20%
+            &-title
+                font-size: 20px
+            &-desc
+                font-size: 10px
+            &-btn
+                font-size: 10px
