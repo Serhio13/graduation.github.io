@@ -22,6 +22,7 @@
         justify-content: space-around
         padding: 30px 30px
         position: relative
+        z-index: 100
         &::after
             content: ""
             height: 1px
@@ -32,6 +33,7 @@
             background-color: $accent
         &-tab
             position: relative
+            z-index: 100
             &::after
                 content: ""
                 height: 3px
@@ -656,14 +658,19 @@
             &-btn
                 font-size: 10px
         &__glare
-            .glare__7
-                top: 20%
-                right: 50%
+            .glare__1
+                display: none
+            .glare__2
+                display: none
+            .glare__3
+                display: none
+            .glare__4
+                display: none
+            .glare__5
+                display: none
             .glare__6
-                right: 20%
+                display: none
+            .glare__7
+                display: none
             .glare__dots
-                bottom: 27%
-                left: 62%
-                img
-                    width: 70px
-                    transform: scale(-1, 1)
+                display: none
